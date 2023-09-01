@@ -23,7 +23,7 @@ func (c *Command) Run() {
 	c.Execute(c, c.Flags.Args())
 }
 
-func errAndExit(msg string) {
+func ErrAndExit(msg string) {
 	fmt.Fprint(os.Stderr, msg, "\n")
 	os.Exit(1)
 }
