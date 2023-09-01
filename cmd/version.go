@@ -8,6 +8,10 @@ import (
 	"github.com/gavsidhu/templ8/pkg"
 )
 
+var Build = "d22f04a64eb20e09a6fe854db7d9bce8aa8a9309"
+var Version = "0.0.1"
+var short = false
+
 func NewVersionCommand() *pkg.Command {
 	cmd := &pkg.Command{
 		Flags:   flag.NewFlagSet("version", flag.ExitOnError),
@@ -21,17 +25,11 @@ func NewVersionCommand() *pkg.Command {
 	return cmd
 }
 
-var (
-	build   = "???"
-	version = "???"
-	short   = false
-)
-
 var versionFunc = func(cmd *pkg.Command, args []string) {
 	if short {
-		fmt.Printf("brief version: v%s", version)
+		fmt.Printf("brief version: v%s", Version)
 	} else {
-		fmt.Printf("brief version: v%s, build: %s", version, build)
+		fmt.Printf("brief version: v%s, build: %s", Version, Build)
 	}
 	os.Exit(0)
 }

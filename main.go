@@ -9,7 +9,13 @@ import (
 	"github.com/gavsidhu/templ8/pkg"
 )
 
+var (
+	Version string
+	Build   string
+)
+
 func main() {
+
 	flag.Usage = func() {
 		fmt.Fprint(os.Stderr, fmt.Sprint(usage))
 	}
@@ -25,6 +31,12 @@ func main() {
 		command = cmd.NewVersionCommand()
 	case "add":
 		command = cmd.NewAddCommand()
+	case "paste":
+		command = cmd.NewPasteCommand()
+	case "list":
+		command = cmd.NewListCommand()
+	case "delete":
+		command = cmd.NewDeleteCommand()
 	default:
 		usageAndExit(fmt.Sprintf("templ8: '%s' is not a templ8 command.\n", os.Args[1]))
 	}
@@ -51,9 +63,8 @@ Options:
 
 Commands:
   add		Adds a template to the collection from a local file
-  edit		Uses the default text editor to modify a stored template
+  paste		Pastes the specified template into the current directory
   list		Lists all stored templates
-  create	Generates an instance of a template in the current directory
   delete	Removes a stored template
   version	Prints version info to console
 `
