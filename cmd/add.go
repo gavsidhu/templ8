@@ -50,7 +50,7 @@ var addFunc = func(cmd *pkg.Command, args []string) {
 				helpers.ErrAndExit("Error: Invalid directory path")
 			}
 
-			destinationDir := filepath.Join("templates/dir", *&nameFlag)
+			destinationDir := filepath.Join("", "/users/shared", "templates/dir", *&nameFlag)
 
 			if err := os.MkdirAll(destinationDir, os.ModePerm); err != nil {
 				helpers.ErrAndExit(err)
@@ -63,7 +63,6 @@ var addFunc = func(cmd *pkg.Command, args []string) {
 			fmt.Printf("Added directory '%s' to '%s'\n", dirFlag, destinationDir)
 
 		} else if fileFlag != "" {
-			fmt.Println(fileFlag)
 			isValid, err := helpers.ValidateFile(fileFlag)
 			if err != nil {
 				helpers.ErrAndExit(err)
@@ -72,9 +71,7 @@ var addFunc = func(cmd *pkg.Command, args []string) {
 				helpers.ErrAndExit(err)
 			}
 
-			originalFileName := filepath.Base(fileFlag)
-
-			destinationDir := "templates/files/"
+			destinationDir := filepath.Join("", "/users/shared", "templates/files/")
 			if err := os.MkdirAll(destinationDir, os.ModePerm); err != nil {
 				fmt.Println("Error:", err)
 				return
@@ -86,7 +83,7 @@ var addFunc = func(cmd *pkg.Command, args []string) {
 				return
 			}
 
-			fmt.Printf("Added file '%s' as '%s' under templates/files/\n", fileFlag, originalFileName)
+			fmt.Printf("Added file '%s' as '%s' under %s/\n", fileFlag, nameFlag+filepath.Ext(fileFlag), destinationDir)
 
 		}
 	}

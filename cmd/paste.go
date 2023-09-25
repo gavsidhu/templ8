@@ -38,7 +38,7 @@ var pasteFunc = func(cmd *pkg.Command, args []string) {
 			os.Exit(1)
 		}
 		if dirFlag == "true" {
-			template := filepath.Join("templates/dir", nameFlag)
+			template := filepath.Join("", "/users/shared", "templates/dir", nameFlag)
 
 			dirInfo, err := os.Stat(template)
 
@@ -62,7 +62,7 @@ var pasteFunc = func(cmd *pkg.Command, args []string) {
 			fmt.Printf("Created directory template: '%s' in '%s'\n", nameFlag, currentDirectory)
 
 		} else if fileFlag == "true" {
-			template := filepath.Join("templates/files", nameFlag)
+			template := filepath.Join("", "/users/shared", "templates/files", nameFlag)
 
 			_, err := os.Stat(template)
 
