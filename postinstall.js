@@ -131,10 +131,10 @@ function parsePackageJson() {
   let binPath = packageJson.goBinary.path;
   let url = packageJson.goBinary.url;
   let version = packageJson.version;
-  if (version[0] === "v") version = version.substr(1); // strip the 'v' if necessary v0.0.1 => 0.0.1
   let versionWithoutV = version.includes("v")
     ? version.replace("v", "")
     : version;
+  console.log("version: ", versionWithoutV);
   // Binary name on Windows has .exe suffix
   if (process.platform === "win32") {
     binName += ".exe";
