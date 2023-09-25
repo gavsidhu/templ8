@@ -38,7 +38,7 @@ var deleteFunc = func(cmd *pkg.Command, args []string) {
 			os.Exit(1)
 		}
 		if dirFlag == "true" {
-			template := filepath.Join("templates/dir", nameFlag)
+			template := filepath.Join("", "/users/shared", "templates/dir", *&nameFlag)
 
 			dirInfo, err := os.Stat(template)
 
@@ -54,7 +54,7 @@ var deleteFunc = func(cmd *pkg.Command, args []string) {
 
 			fmt.Printf("Deleted directory template: '%s'\n", nameFlag)
 		} else if fileFlag == "true" {
-			template := filepath.Join("templates/files", nameFlag)
+			template := filepath.Join("", "/users/shared", "templates/files", *&nameFlag)
 
 			_, err := os.Stat(template)
 

@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"path/filepath"
 
 	"github.com/gavsidhu/templ8/helpers"
 	"github.com/gavsidhu/templ8/pkg"
@@ -23,8 +24,8 @@ func NewListCommand() *pkg.Command {
 }
 
 var listFunc = func(cmd *pkg.Command, args []string) {
-	templateDir := "./templates/dir"
-	fileDir := "./templates/files"
+	templateDir := filepath.Join("", "/users/shared", "templates/dir")
+	fileDir := filepath.Join("", "/users/shared", "templates/files")
 
 	dirEntries, dirErr := os.ReadDir(templateDir)
 	fileEntries, fileErr := os.ReadDir(fileDir)
