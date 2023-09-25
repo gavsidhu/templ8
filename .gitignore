@@ -21,3 +21,6 @@
 go.work
 
 templates/
+
+node_modules/
+dist/
