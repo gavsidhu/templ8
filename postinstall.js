@@ -165,9 +165,9 @@ async function install(callback) {
   console.info(
     `Copying the relevant binary for your platform ${process.platform}`
   );
-  const src = `./dist/templ8-${process.platform}-${
+  const src = `./dist/templ8_${process.platform}_${
     ARCH_MAPPING[process.arch]
-  }_${process.platform}_${ARCH_MAPPING[process.arch]}/${opts.binName}`;
+  }/${opts.binName}`;
   await execShellCommand(`cp ${src} ${opts.binPath}/${opts.binName}`);
   await verifyAndPlaceBinary(opts.binName, opts.binPath, callback);
 }
