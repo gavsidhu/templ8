@@ -14,7 +14,7 @@ Templ8 is a command-line tool that makes it easier to manage custom templates. I
 To use Templ8, you'll need to install it on your system. Make sure you have [Node.js](https://nodejs.org/) installed.
 
 ```bash
-npm install -g templ8
+npm install -g @gavsidhu/templ8
 ```
 
 ## Usage
