@@ -12,8 +12,7 @@
     "url": "https://github.com/gavsidhu/templ8"
   },
   "dependencies": {
-    "global": "^4.4.0",
-    "go-npm": "^0.1.9"
+    "mkdirp": "^1.0.4"
   },
   "keywords": [
     "cli",
