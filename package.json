@@ -1,6 +1,6 @@
 {
   "name": "@gavsidhu/templ8",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Templ8 is a command-line tool that makes it easier to manage custom templates. It allows you to create, store, and use files or directories as templates, saving you time and effort.",
   "main": "index.js",
   "scripts": {
