@@ -46,7 +46,7 @@ var deleteFunc = func(cmd *pkg.Command, args []string) {
 				helpers.ErrAndExit("Template directory not found")
 			}
 
-			err = os.Remove(template)
+			err = os.RemoveAll(template)
 
 			if err != nil {
 				helpers.ErrAndExit(err)
