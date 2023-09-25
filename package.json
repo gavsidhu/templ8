@@ -1,11 +1,11 @@
 {
   "name": "@gavsidhu/templ8",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Templ8 is a command-line tool that makes it easier to manage custom templates. It allows you to create, store, and use files or directories as templates, saving you time and effort.",
   "main": "index.js",
   "scripts": {
-    "postinstall": "go-npm install",
-    "preuninstall": "go-npm uninstall"
+    "postinstall": "node postinstall.js install",
+    "preuninstall": "node postinstall.js uninstall"
   },
   "repository": {
     "type": "git",
