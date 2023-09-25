@@ -24,6 +24,7 @@ var ARCH_MAPPING = {
   ia32: "386",
   x64: "amd64",
   arm: "arm",
+  arm64: "arm64",
 };
 
 // Mapping between Node's `process.platform` to Golang's
@@ -164,7 +165,7 @@ async function install(callback) {
   console.info(
     `Copying the relevant binary for your platform ${process.platform}`
   );
-  const src = `./dist/example-cli-${process.platform}-${
+  const src = `./dist/templ8-${process.platform}-${
     ARCH_MAPPING[process.arch]
   }_${process.platform}_${ARCH_MAPPING[process.arch]}/${opts.binName}`;
   await execShellCommand(`cp ${src} ${opts.binPath}/${opts.binName}`);
