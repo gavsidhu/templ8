@@ -23,6 +23,7 @@
   "license": "ISC",
   "goBinary": {
     "name": "templ8",
-    "path": "./bin"
+    "path": "./bin",
+    "url": "https://github.com/gavsidhu/templ8/releases/download/v{{version}}/templ8_{{version}}_{{platform}}_{{arch}}.tar.gz"
   }
 }
