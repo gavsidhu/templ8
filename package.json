@@ -12,7 +12,9 @@
     "url": "https://github.com/gavsidhu/templ8"
   },
   "dependencies": {
-    "mkdirp": "^1.0.4"
+    "mkdirp": "^1.0.4",
+    "request": "^2.81.0",
+    "tar": "^2.2.1"
   },
   "keywords": [
     "cli",
