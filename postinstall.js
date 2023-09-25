@@ -132,7 +132,9 @@ function parsePackageJson() {
   let url = packageJson.goBinary.url;
   let version = packageJson.version;
   if (version[0] === "v") version = version.substr(1); // strip the 'v' if necessary v0.0.1 => 0.0.1
-
+  let versionWithoutV = version.includes("v")
+    ? version.replace("v", "")
+    : version;
   // Binary name on Windows has .exe suffix
   if (process.platform === "win32") {
     binName += ".exe";
@@ -141,7 +143,7 @@ function parsePackageJson() {
   // Interpolate variables in URL, if necessary
   url = url.replace(/{{arch}}/g, ARCH_MAPPING[process.arch]);
   url = url.replace(/{{platform}}/g, PLATFORM_MAPPING[process.platform]);
-  url = url.replace(/{{version}}/g, version);
+  url = url.replace(/{{version}}/g, versionWithoutV);
   url = url.replace(/{{bin_name}}/g, binName);
 
   return {
